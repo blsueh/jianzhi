@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>体验剪纸 - 瑞昌剪纸</title>
-    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
+    <script src="https://unpkg.com/@mediapipe/hands/hands.js" defer></script>
+    <script src="https://unpkg.com/@mediapipe/camera_utils/camera_utils.js" defer></script>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
@@ -689,18 +689,18 @@
 
 <script>
 const zodiacData = {
-    shu:  { hanzi:'鼠', branch:'子', english:'Rat',     pinyin:'Zǐ',    trait:'机敏 · 多智', img:'zodiac/shu.jpg',  desc:'子鼠机敏，多智善谋' },
-    niu:  { hanzi:'牛', branch:'丑', english:'Ox',      pinyin:'Chǒu',  trait:'勤勉 · 笃实', img:'zodiac/niu.jpg',  desc:'丑牛勤勉，笃实无华' },
-    hu:   { hanzi:'虎', branch:'寅', english:'Tiger',   pinyin:'Yín',   trait:'威猛 · 果敢', img:'zodiac/hu.jpg',   desc:'寅虎威猛，果敢无畏' },
-    tu:   { hanzi:'兔', branch:'卯', english:'Rabbit',  pinyin:'Mǎo',   trait:'温良 · 敏捷', img:'zodiac/tu.jpg',   desc:'卯兔温良，敏捷灵动' },
-    long: { hanzi:'龙', branch:'辰', english:'Dragon',  pinyin:'Chén',  trait:'尊贵 · 腾跃', img:'zodiac/long.jpg', desc:'辰龙尊贵，腾云驾雾' },
-    she:  { hanzi:'蛇', branch:'巳', english:'Snake',   pinyin:'Sì',    trait:'沉静 · 灵慧', img:'zodiac/she.jpg',  desc:'巳蛇沉静，灵慧内敛' },
-    ma:   { hanzi:'马', branch:'午', english:'Horse',   pinyin:'Wǔ',    trait:'奔腾 · 致远', img:'zodiac/ma.jpg',   desc:'午马奔腾，志在千里' },
-    yang: { hanzi:'羊', branch:'未', english:'Goat',    pinyin:'Wèi',   trait:'和顺 · 仁爱', img:'zodiac/yang.jpg', desc:'未羊和顺，仁爱温良' },
-    hou:  { hanzi:'猴', branch:'申', english:'Monkey',  pinyin:'Shēn',  trait:'灵巧 · 善变', img:'zodiac/hou.jpg',  desc:'申猴灵巧，机智百变' },
-    ji:   { hanzi:'鸡', branch:'酉', english:'Rooster', pinyin:'Yǒu',   trait:'勤奋 · 守信', img:'zodiac/ji.jpg',   desc:'酉鸡勤奋，守信司晨' },
-    gou:  { hanzi:'狗', branch:'戌', english:'Dog',     pinyin:'Xū',    trait:'忠诚 · 守护', img:'zodiac/gou.jpg',  desc:'戌狗忠诚，守护家园' },
-    zhu:  { hanzi:'猪', branch:'亥', english:'Pig',     pinyin:'Hài',   trait:'豁达 · 福气', img:'zodiac/zhu.jpg',  desc:'亥猪豁达，福气盈门' }
+    shu:  { hanzi:'鼠', branch:'子', english:'Rat',     pinyin:'Zǐ',    trait:'机敏 · 多智', img:'/zodiac/shu.jpg',  desc:'子鼠机敏，多智善谋' },
+    niu:  { hanzi:'牛', branch:'丑', english:'Ox',      pinyin:'Chǒu',  trait:'勤勉 · 笃实', img:'/zodiac/niu.jpg',  desc:'丑牛勤勉，笃实无华' },
+    hu:   { hanzi:'虎', branch:'寅', english:'Tiger',   pinyin:'Yín',   trait:'威猛 · 果敢', img:'/zodiac/hu.jpg',   desc:'寅虎威猛，果敢无畏' },
+    tu:   { hanzi:'兔', branch:'卯', english:'Rabbit',  pinyin:'Mǎo',   trait:'温良 · 敏捷', img:'/zodiac/tu.jpg',   desc:'卯兔温良，敏捷灵动' },
+    long: { hanzi:'龙', branch:'辰', english:'Dragon',  pinyin:'Chén',  trait:'尊贵 · 腾跃', img:'/zodiac/long.jpg', desc:'辰龙尊贵，腾云驾雾' },
+    she:  { hanzi:'蛇', branch:'巳', english:'Snake',   pinyin:'Sì',    trait:'沉静 · 灵慧', img:'/zodiac/she.jpg',  desc:'巳蛇沉静，灵慧内敛' },
+    ma:   { hanzi:'马', branch:'午', english:'Horse',   pinyin:'Wǔ',    trait:'奔腾 · 致远', img:'/zodiac/ma.jpg',   desc:'午马奔腾，志在千里' },
+    yang: { hanzi:'羊', branch:'未', english:'Goat',    pinyin:'Wèi',   trait:'和顺 · 仁爱', img:'/zodiac/yang.jpg', desc:'未羊和顺，仁爱温良' },
+    hou:  { hanzi:'猴', branch:'申', english:'Monkey',  pinyin:'Shēn',  trait:'灵巧 · 善变', img:'/zodiac/hou.jpg',  desc:'申猴灵巧，机智百变' },
+    ji:   { hanzi:'鸡', branch:'酉', english:'Rooster', pinyin:'Yǒu',   trait:'勤奋 · 守信', img:'/zodiac/ji.jpg',   desc:'酉鸡勤奋，守信司晨' },
+    gou:  { hanzi:'狗', branch:'戌', english:'Dog',     pinyin:'Xū',    trait:'忠诚 · 守护', img:'/zodiac/gou.jpg',  desc:'戌狗忠诚，守护家园' },
+    zhu:  { hanzi:'猪', branch:'亥', english:'Pig',     pinyin:'Hài',   trait:'豁达 · 福气', img:'/zodiac/zhu.jpg',  desc:'亥猪豁达，福气盈门' }
 };
 
 function getParam(name) {
@@ -748,6 +748,11 @@ window.addEventListener('load', () => {
         resetPaper();
         setTimeout(() => document.getElementById('loading').classList.add('hide'), 500);
     };
+    referenceImg.onerror = () => {
+        // 图片加载失败也让页面能正常显示，不至于卡在加载界面
+        setTimeout(() => document.getElementById('loading').classList.add('hide'), 500);
+        alert('生肖图片加载失败，请检查 zodiac 图片路径是否正确');
+    };
     referenceImg.src = data.img;
 });
 
@@ -767,6 +772,7 @@ function resetPaper() {
 
 function generatePathPoints() {
     pathPoints = [];
+    if (!referenceImg || !referenceImg.complete) return;
     const tempCanvas = document.createElement('canvas');
     tempCanvas.width = 600;
     tempCanvas.height = 600;
@@ -883,24 +889,19 @@ let animationId = null;
 let mouseX = -9999, mouseY = -9999;
 let particleTime = 0;
 
-// 进入粒子欣赏模式
 function enterParticleMode() {
     document.getElementById('successModal').classList.remove('show');
     document.getElementById('particleMode').classList.add('show');
     
-    // 尺寸设为全屏
     particleCanvas.width = window.innerWidth;
     particleCanvas.height = window.innerHeight;
     
-    // 从参考图取样，生成粒子
     generateParticles();
     
-    // 开始动画
     if (animationId) cancelAnimationFrame(animationId);
     animateParticles();
 }
 
-// 退出粒子模式
 function exitParticleMode() {
     document.getElementById('particleMode').classList.remove('show');
     document.getElementById('successModal').classList.add('show');
@@ -911,12 +912,11 @@ function exitParticleMode() {
     particles = [];
 }
 
-// 生成粒子（从参考图取样红色像素）
 function generateParticles() {
     particles = [];
     
     const sampleCanvas = document.createElement('canvas');
-    const sampleSize = 400; // 采样分辨率
+    const sampleSize = 400;
     sampleCanvas.width = sampleSize;
     sampleCanvas.height = sampleSize;
     const sCtx = sampleCanvas.getContext('2d');
@@ -925,13 +925,11 @@ function generateParticles() {
     const imgData = sCtx.getImageData(0, 0, sampleSize, sampleSize);
     const data = imgData.data;
     
-    // 目标显示的尺寸和位置（居中）
     const displaySize = Math.min(window.innerWidth, window.innerHeight) * 0.7;
     const centerX = window.innerWidth / 2;
     const centerY = window.innerHeight / 2;
     const scale = displaySize / sampleSize;
     
-    // 采样步长（越小粒子越多）—— step=1 就是百万级粒子
     const step = 1;
     
     for (let y = 0; y < sampleSize; y += step) {
@@ -942,15 +940,12 @@ function generateParticles() {
             const b = data[idx + 2];
             const a = data[idx + 3];
             
-            // 只保留红色像素（剪纸主体）
             const isRed = a > 100 && r > 100 && g < 120 && b < 120 && (r - g > 40);
             
             if (isRed) {
-                // 目标位置
                 const targetX = centerX + (x - sampleSize/2) * scale;
                 const targetY = centerY + (y - sampleSize/2) * scale;
                 
-                // 初始爆炸位置（从中心向外扩散）
                 const angle = Math.random() * Math.PI * 2;
                 const dist = Math.random() * Math.max(window.innerWidth, window.innerHeight);
                 
@@ -961,14 +956,11 @@ function generateParticles() {
                     ty: targetY,
                     vx: 0,
                     vy: 0,
-                    // 颜色 - 红色系带随机变化
                     r: r + (Math.random() - 0.5) * 30,
                     g: g + (Math.random() - 0.5) * 20,
                     b: b + (Math.random() - 0.5) * 20,
                     size: Math.random() * 1.2 + 0.4,
-                    // 呼吸相位（每个粒子不同）
                     phase: Math.random() * Math.PI * 2,
-                    // 每个粒子的响应速度不同（营造层次感）
                     speed: 0.02 + Math.random() * 0.05
                 });
             }
@@ -978,40 +970,32 @@ function generateParticles() {
     console.log(`✨ 生成粒子数量: ${particles.length}`);
 }
 
-// 粒子动画循环
 function animateParticles() {
-    // 使用半透明填充营造拖尾效果
     pCtx.fillStyle = 'rgba(10, 5, 5, 0.15)';
     pCtx.fillRect(0, 0, particleCanvas.width, particleCanvas.height);
     
     particleTime += 0.01;
     
-    // 整体旋转（缓慢）
     const globalRotation = Math.sin(particleTime * 0.3) * 0.08;
     const centerX = particleCanvas.width / 2;
     const centerY = particleCanvas.height / 2;
     const cosR = Math.cos(globalRotation);
     const sinR = Math.sin(globalRotation);
     
-    // 呼吸缩放（1.0 上下浮动）
     const breathe = 1 + Math.sin(particleTime * 0.8) * 0.03;
     
-    // 使用批量绘制提升性能
     for (let i = 0; i < particles.length; i++) {
         const p = particles[i];
         
-        // 相对于中心的旋转目标位置
         const dx = p.tx - centerX;
         const dy = p.ty - centerY;
         const rx = centerX + (dx * cosR - dy * sinR) * breathe;
         const ry = centerY + (dx * sinR + dy * cosR) * breathe;
         
-        // 呼吸偏移（每个粒子上下小幅浮动）
         const floatOffset = Math.sin(particleTime * 2 + p.phase) * 2;
         const finalTx = rx;
         const finalTy = ry + floatOffset;
         
-        // 鼠标斥力交互
         const mdx = p.x - mouseX;
         const mdy = p.y - mouseY;
         const mdist2 = mdx * mdx + mdy * mdy;
@@ -1024,18 +1008,15 @@ function animateParticles() {
             p.vy += (mdy / mdist) * force;
         }
         
-        // 向目标点缓动
         p.vx += (finalTx - p.x) * p.speed;
         p.vy += (finalTy - p.y) * p.speed;
         
-        // 阻尼
         p.vx *= 0.88;
         p.vy *= 0.88;
         
         p.x += p.vx;
         p.y += p.vy;
         
-        // 绘制粒子
         pCtx.fillStyle = `rgba(${p.r|0},${p.g|0},${p.b|0},0.85)`;
         pCtx.fillRect(p.x, p.y, p.size, p.size);
     }
@@ -1043,7 +1024,6 @@ function animateParticles() {
     animationId = requestAnimationFrame(animateParticles);
 }
 
-// 鼠标交互
 document.getElementById('particleMode').addEventListener('mousemove', (e) => {
     mouseX = e.clientX;
     mouseY = e.clientY;
@@ -1053,7 +1033,6 @@ document.getElementById('particleMode').addEventListener('mouseleave', () => {
     mouseY = -9999;
 });
 
-// 窗口大小变化
 window.addEventListener('resize', () => {
     if (document.getElementById('particleMode').classList.contains('show')) {
         particleCanvas.width = window.innerWidth;
@@ -1062,7 +1041,6 @@ window.addEventListener('resize', () => {
     }
 });
 
-// ESC 键退出粒子模式
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && document.getElementById('particleMode').classList.contains('show')) {
         exitParticleMode();
@@ -1080,10 +1058,17 @@ let camera = null;
 
 document.getElementById('startBtn').addEventListener('click', async () => {
     if (camera) return;
+
+    // 检查手势识别组件是否加载完成（网络慢时可能还没加载好）
+    if (typeof Hands === 'undefined' || typeof Camera === 'undefined') {
+        alert('手势识别组件仍在加载中（网络较慢），请稍等几秒后再点一次');
+        return;
+    }
+
     statusEl.textContent = '加载算法...';
     
     hands = new Hands({
-        locateFile: (file) => `https://cdn.jsdelivr.net/npm/@mediapipe/hands/${file}`
+        locateFile: (file) => `https://unpkg.com/@mediapipe/hands/${file}`
     });
     hands.setOptions({
         maxNumHands: 1,
@@ -1142,7 +1127,6 @@ function onHandResults(results) {
     cutAt(cursorX, cursorY);
 }
 
-// 鼠标备用
 let mouseIsDown = false;
 paperWrapper.addEventListener('mousedown', () => { mouseIsDown = true; });
 window.addEventListener('mouseup', () => { mouseIsDown = false; });
